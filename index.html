@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The Castle Kitchen — A Studio Ghibli inspired immersive recipe cookbook experience. Step into a warm, magical kitchen and discover recipes in a vintage journal.">
+  <title>The Castle Kitchen</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏰</text></svg>">
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════════════
+     LOADING SCREEN
+     ══════════════════════════════════════════════════════════ -->
+<div id="loading-screen" class="loading-screen">
+  <div class="loading-text">Entering the kitchen...</div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     SCENE — The Animated Ghibli Kitchen
+     ══════════════════════════════════════════════════════════ -->
+<div id="scene">
+  <!-- Background layers -->
+  <div class="scene-bg" id="scene-bg"></div>
+  <div class="scene-overlay" id="scene-overlay"></div>
+  <div class="scene-glow" id="scene-glow"></div>
+
+  <!-- Particles canvas -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- Seasonal overlay -->
+  <div class="season-overlay" id="season-overlay"></div>
+
+  <!-- Kitchen window with rain -->
+  <div class="kitchen-window" id="kitchen-window">
+    <div class="window-rain" id="window-rain"></div>
+  </div>
+
+  <!-- Time indicator -->
+  <div class="time-indicator" id="time-indicator"></div>
+
+  <!-- Welcome text -->
+  <div class="scene-welcome">
+    <h1>Welcome Home</h1>
+    <p>come sit by the fire...</p>
+  </div>
+
+  <!-- Steam from food -->
+  <div class="steam-container">
+    <div class="steam"></div>
+    <div class="steam"></div>
+    <div class="steam"></div>
+    <div class="steam"></div>
+  </div>
+
+  <!-- Fireplace with animated flames -->
+  <div class="fireplace" id="fireplace" title="Stoke the fire">
+    <div class="fire-container">
+      <div class="flame flame-1"></div>
+      <div class="flame flame-2"></div>
+      <div class="flame flame-3"></div>
+      <div class="ember"></div>
+      <div class="ember"></div>
+      <div class="ember"></div>
+      <div class="ember"></div>
+      <div class="fire-glow"></div>
+    </div>
+  </div>
+
+  <!-- The Book on the Table -->
+  <div class="book-on-table" id="book-on-table" title="Open the cookbook">
+    <div class="book-shine"></div>
+    <div class="book-visual">
+      <div class="book-cover-face">
+        <div class="book-title-overlay">
+          <h3>The Castle<br>Kitchen</h3>
+          <div class="book-subtitle">~ recipes & memories ~</div>
+        </div>
+      </div>
+    </div>
+    <div class="book-hint">✦ click to open ✦</div>
+  </div>
+
+  <!-- Hanging Lantern (SVG, not emoji!) -->
+  <div class="lantern-container" id="lantern" title="Light the lantern">
+    <div class="lantern-chain"></div>
+    <div class="lantern-body">
+      <div class="lantern-cap"></div>
+      <div class="lantern-glass" id="lantern-glass">
+        <div class="lantern-flame" id="lantern-flame"></div>
+      </div>
+      <div class="lantern-bottom"></div>
+      <div class="lantern-light-cone" id="lantern-cone"></div>
+    </div>
+    <div class="lantern-tooltip">click to light</div>
+  </div>
+
+  <!-- Sound indicator -->
+  <div class="sound-indicator" id="sound-indicator">♪ rain ambience playing</div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     BOOK OPENING TRANSITION
+     ══════════════════════════════════════════════════════════ -->
+<div id="book-transition">
+  <div class="book-3d">
+    <div class="book-3d-page"></div>
+    <div class="book-3d-page"></div>
+    <div class="book-3d-page"></div>
+    <div class="book-3d-page"></div>
+    <div class="book-3d-cover"></div>
+  </div>
+</div>
+<div class="ink-splatter" id="ink-splatter"></div>
+
+<!-- ══════════════════════════════════════════════════════════
+     COOKBOOK — The Vintage Journal
+     ══════════════════════════════════════════════════════════ -->
+<div id="cookbook">
+  <button class="back-to-scene" id="back-to-scene">← Back to Kitchen</button>
+
+  <div class="cookbook-wrapper">
+    <div class="cookbook-spread" id="cookbook-spread">
+      <!-- Spine shadow -->
+      <div class="cookbook-spine"></div>
+
+      <!-- LEFT PAGE — Navigation / Decoration -->
+      <div class="cookbook-page" id="left-page">
+        <!-- Contents change based on section -->
+      </div>
+
+      <!-- RIGHT PAGE — Main Content -->
+      <div class="cookbook-page" id="right-page">
+        <!-- Page tabs on edge -->
+        <div class="page-tabs" id="page-tabs"></div>
+        <!-- Bookmark ribbon -->
+        <div class="bookmark-ribbon" id="bookmark" style="right: 30px;" title="Bookmark this page"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     AUDIO
+     ══════════════════════════════════════════════════════════ -->
+<audio id="rain-audio" loop preload="auto">
+  <source src="calming-rain-257596.mp3" type="audio/mpeg">
+</audio>
+
+<script src="script.js"></script>
+</body>
+</html>
